@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CarRapide BMS Monitor</string>
+    
+    <!-- Dashboard -->
+    <string name="battery_status">Battery Status</string>
+    <string name="state_of_charge">State of Charge</string>
+    <string name="voltage">Voltage</string>
+    <string name="current">Current</string>
+    <string name="power">Power</string>
+    <string name="temperature">Temperature</string>
+    <string name="cell_voltages">Cell Voltages (%1$d cells)</string>
+    
+    <!-- Connection -->
+    <string name="connection_status">Connection Status</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connecting">Connecting…</string>
+    <string name="usb_not_connected">USB CAN adapter not connected</string>
+    <string name="mqtt_offline">Cloud offline</string>
+    <string name="buffered_data">%1$d messages buffered</string>
+    
+    <!-- Alerts -->
+    <string name="alerts">Alerts</string>
+    <string name="critical_alert">Critical Alert</string>
+    <string name="warning_alert">Warning</string>
+    <string name="low_voltage">Low Voltage</string>
+    <string name="high_voltage">High Voltage</string>
+    <string name="high_temperature">High Temperature</string>
+    <string name="low_temperature">Low Temperature</string>
+    <string name="cell_imbalance">Cell Imbalance</string>
+    <string name="low_soc">Low Battery</string>
+    
+    <!-- Actions -->
+    <string name="start_monitoring">Start Monitoring</string>
+    <string name="stop_monitoring">Stop Monitoring</string>
+    <string name="sync_data">Sync Buffered Data</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Service -->
+    <string name="service_notification_title">BMS Monitoring Active</string>
+    <string name="service_notification_text">Monitoring battery health</string>
+</resources>

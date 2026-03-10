@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PCAN-USB FD (configurable via bms_config.yml) -->
+    <usb-device vendor-id="3186" product-id="12" />
+    <!-- vendor-id="3186" = 0x0C72 (PEAK-System Technik GmbH), product-id="12" = 0x000C -->
+
+    <!-- CANable (configurable via bms_config.yml) -->
+    <usb-device vendor-id="7504" product-id="24687" />
+    <!-- vendor-id="7504" = 0x1D50, product-id="24687" = 0x606F -->
+</resources>

@@ -1,0 +1,48 @@
+# BMS Configuration - Adapter Pattern
+# Protocol selection is configurable via this YAML file.
+#
+# Supported can_adapter values: pcan-usb-fd, canable
+# Supported bms_protocol values: ennoid
+
+bms:
+  # CAN-Bus hardware adapter
+  # pcan-usb-fd: PEAK PCAN-USB FD (VID=0x0C72, PID=0x000C)
+  # canable: CANable/cantact (USB Serial, VID=0x1D50, PID=0x606F)
+  can_adapter: pcan-usb-fd
+
+  # BMS protocol decoder
+  # ennoid: ENNOID BMS CAN protocol (0x100-0x11E, 0x180-0x181)
+  bms_protocol: ennoid
+
+  # CAN-Bus parameters (adapter-specific)
+  can_bus:
+    bitrate: 500000          # 500 kbps (ENNOID standard)
+    sample_point: 0.875
+    listen_only: false
+
+  # Adapter-specific settings
+  adapters:
+    pcan-usb-fd:
+      vendor_id: 0x0C72
+      product_id: 0x000C
+      usb_baud_rate: 115200
+
+    canable:
+      vendor_id: 0x1D50
+      product_id: 0x606F
+      usb_baud_rate: 921600
+
+  # Protocol-specific settings
+  protocols:
+    ennoid:
+      cell_count: 114
+      message_ids:
+        pack_status: 0x100
+        pack_current: 0x101
+        temperatures: 0x102
+        cell_stats: 0x103
+        warnings: 0x104
+        cell_voltages_start: 0x110
+        cell_voltages_end: 0x11E
+        gps_latitude: 0x180
+        gps_longitude: 0x181
