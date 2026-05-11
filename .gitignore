@@ -6,3 +6,12 @@ app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/pro
 gradle/wrapper/gradle-wrapper.jar
 gradle
 .gradle
+.DS_Store
+../.kotlin
+../.kotlin/
+.kotlin/
+DSB18B20
+.gradle
+.gradle/9.1.0 .gradle/buildOutputCleanup .gradle/config.properties .gradle/file-system.probe .gradle/kotlin .gradle/vcs-1
+.gradle/9.1.0 .gradle/9.1.0/checksums .gradle/9.1.0/checksums/checksums.lock .gradle/9.1.0/checksums/md5-checksums.bin .gradle/9.1.0/checksums/sha1-checksums.bin .gradle/9.1.0/executionHistory .gradle/9.1.0/executionHistory/executionHistory.bin .gradle/9.1.0/executionHistory/executionHistory.lock .gradle/9.1.0/expanded .gradle/9.1.0/fileChanges .gradle/9.1.0/fileChanges/last-build.bin .gradle/9.1.0/fileHashes .gradle/9.1.0/fileHashes/fileHashes.bin .gradle/9.1.0/fileHashes/fileHashes.lock .gradle/9.1.0/fileHashes/resourceHashesCache.bin .gradle/9.1.0/gc.properties .gradle/9.1.0/vcsMetadata .gradle/buildOutputCleanup .gradle/buildOutputCleanup/buildOutputCleanup.lock .gradle/buildOutputCleanup/cache.properties .gradle/buildOutputCleanup/outputFiles.bin .gradle/config.properties .gradle/file-system.probe .gradle/kotlin .gradle/kotlin/errors .gradle/vcs-1 .gradle/vcs-1/gc.properties
+.gradle/

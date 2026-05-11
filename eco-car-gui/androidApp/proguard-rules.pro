@@ -1,0 +1,10 @@
+# MapLibre / native map stack
+-keep class org.maplibre.** { *; }
+-keep class com.mapbox.** { *; }
+-dontwarn org.maplibre.**
+-dontwarn com.mapbox.**
+
+# JNI / native
+-keepclasseswithmembernames class * {
+    native <methods>;
+}

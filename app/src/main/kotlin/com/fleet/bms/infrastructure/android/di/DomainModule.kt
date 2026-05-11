@@ -1,15 +1,16 @@
 package com.fleet.bms.infrastructure.android.di
 
-import android.content.Context
 import com.fleet.bms.domain.model.BatteryPackId
 import com.fleet.bms.domain.model.VehicleId
 import com.fleet.bms.domain.service.AlertEvaluator
 import com.fleet.bms.domain.service.TelemetryAggregator
+import com.fleet.bms.infrastructure.android.preferences.BmsSettingsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import javax.inject.Singleton
 
 /**
@@ -24,25 +25,20 @@ object DomainModule {
     
     @Provides
     @Singleton
-    fun provideBatteryPackId(
-        @ApplicationContext context: Context
-    ): BatteryPackId {
-        // TODO: Load from SharedPreferences or DataStore
-        // For now, use a default ID
-        val prefs = context.getSharedPreferences("bms_config", Context.MODE_PRIVATE)
-        val batteryId = prefs.getString("battery_pack_id", "550e8400-e29b-41d4-a716-446655440000")
-        return BatteryPackId(batteryId!!)
+    fun provideBatteryPackId(repository: BmsSettingsRepository): BatteryPackId {
+        val id = runBlocking(Dispatchers.IO) {
+            repository.load().batteryPackId
+        }
+        return BatteryPackId(id)
     }
     
     @Provides
     @Singleton
-    fun provideVehicleId(
-        @ApplicationContext context: Context
-    ): VehicleId {
-        // TODO: Load from configuration
-        val prefs = context.getSharedPreferences("bms_config", Context.MODE_PRIVATE)
-        val vehicleId = prefs.getString("vehicle_id", "vehicle_001")
-        return VehicleId(vehicleId!!)
+    fun provideVehicleId(repository: BmsSettingsRepository): VehicleId {
+        val id = runBlocking(Dispatchers.IO) {
+            repository.load().vehicleId
+        }
+        return VehicleId(id)
     }
     
     @Provides

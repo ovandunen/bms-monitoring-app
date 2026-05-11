@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1. **Android SDK** installed (API 26-34)
+1. **Android SDK** installed (API 28-34)
 2. **JDK 17** installed
 3. **Android tablet** with USB debugging enabled
 4. **PCAN-USB FD** device (optional for testing)
