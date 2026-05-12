@@ -33,6 +33,12 @@ class DashboardViewModel @Inject constructor(
     
     private val _connectionState = MutableStateFlow(ConnectionState.DISCONNECTED)
     val connectionState: StateFlow<ConnectionState> = _connectionState.asStateFlow()
+
+    private val _socHistory = MutableStateFlow<List<Float>>(emptyList())
+    val socHistory: StateFlow<List<Float>> = _socHistory.asStateFlow()
+
+    private val _powerKwHistory = MutableStateFlow<List<Float>>(emptyList())
+    val powerKwHistory: StateFlow<List<Float>> = _powerKwHistory.asStateFlow()
     
     private var isMonitoring = false
     
@@ -128,6 +134,7 @@ class DashboardViewModel @Inject constructor(
         telemetry: BatteryTelemetry,
         alerts: List<BatteryAlert>
     ) {
+        appendTelemetrySamples(telemetry)
         // Update UI
         _uiState.value = DashboardUiState.Success(
             telemetry = telemetry,
@@ -159,6 +166,13 @@ class DashboardViewModel @Inject constructor(
                 }
         }
     }
+
+    private fun appendTelemetrySamples(telemetry: BatteryTelemetry) {
+        val soc = telemetry.stateOfCharge.value.toFloat().coerceIn(0f, 100f)
+        val kw = (telemetry.power.value / 1000.0).toFloat()
+        _socHistory.update { (it + soc).takeLast(MAX_TELEMETRY_SAMPLES) }
+        _powerKwHistory.update { (it + kw).takeLast(MAX_TELEMETRY_SAMPLES) }
+    }
     
     override fun onCleared() {
         super.onCleared()
@@ -167,6 +181,10 @@ class DashboardViewModel @Inject constructor(
                 stopMonitoringUseCase.execute()
             }
         }
+    }
+
+    private companion object {
+        const val MAX_TELEMETRY_SAMPLES = 72
     }
 }
 

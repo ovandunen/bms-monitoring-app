@@ -30,14 +30,16 @@ import com.fleet.bms.domain.service.BatteryAlert
 @Composable
 fun DashboardScreen(
     viewModel: DashboardViewModel = hiltViewModel(),
-    onNavigateToSniffer: (() -> Unit)? = null
+    onNavigateToSniffer: (() -> Unit)? = null,
+    /** When false, caller (e.g. EcoCar shell) is responsible for [DashboardViewModel.startMonitoring]. */
+    autoStartMonitoring: Boolean = true,
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    val connectionState by viewModel.connectionState.collectAsState()
-    
-    // Auto-start monitoring when screen appears
-    LaunchedEffect(Unit) {
-        viewModel.startMonitoring()
+
+    if (autoStartMonitoring) {
+        LaunchedEffect(Unit) {
+            viewModel.startMonitoring()
+        }
     }
     
     Scaffold(

@@ -94,6 +94,14 @@ Edit `config.properties` or use in-app settings:
 - MQTT broker URL
 - CAN bitrate
 
+## EcoCar GUI (Android, primär)
+
+Die **EcoCar-4-Zonen-Shell** (TopBar, Sidebar, Hauptinhalt, BottomBar) ist im **Android-Modul `:app`** integriert: Startroute `ecocar` → [`EcoCarShell`](app/src/main/kotlin/com/fleet/bms/interfaces/ui/ecocar/EcoCarShell.kt) (Tab **Battery** = bestehendes BMS-Dashboard). Zusätzliche Nav-Routen `legacy_dashboard` / `legacy_sniffer` bleiben im `NavHost` für manuelle Tests (z. B. Deep-Link / Tests).
+
+## EcoCar GUI (Desktop-Prototyp)
+
+Compose **Desktop**-Referenz liegt in [`eco-car-gui/`](eco-car-gui/README.md) (`cd eco-car-gui && ./gradlew run`).
+
 ## License
 
 Proprietary - EcoCar Solaire AG

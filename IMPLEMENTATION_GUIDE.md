@@ -88,7 +88,7 @@ android {
 
     defaultConfig {
         applicationId = "com.fleet.bms"
-        minSdk = 26  // Android 8.0 (for java.time support)
+        minSdk = 28  // Android 9.0 (Angebots-Vorgabe)
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
