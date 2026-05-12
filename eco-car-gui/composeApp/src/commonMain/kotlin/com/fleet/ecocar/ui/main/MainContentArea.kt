@@ -13,14 +13,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.fleet.ecocar.browser.EcoBrowserContent
+import com.fleet.ecocar.music.EcoMusicContent
 import com.fleet.ecocar.map.EcoMapContent
 import com.fleet.ecocar.nav.MainDestination
+import com.fleet.ecocar.ui.battery.BatterySubNav
+import com.fleet.ecocar.ui.charts.ChartsSubNav
 import com.fleet.ecocar.theme.EcoCarColors
 
 @Composable
 fun MainContentArea(
     destination: MainDestination,
     onSimulateLowBattery: () -> Unit,
+    onOpenSniffer: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -31,8 +36,19 @@ fun MainContentArea(
             contentAlignment = Alignment.Center,
         ) {
             when (destination) {
+                MainDestination.Music ->
+                    EcoMusicContent(Modifier.fillMaxSize())
+                MainDestination.Battery ->
+                    BatterySubNav(
+                        onOpenSniffer = onOpenSniffer,
+                        modifier = Modifier.fillMaxSize(),
+                    )
                 MainDestination.Map ->
                     EcoMapContent(Modifier.fillMaxSize())
+                MainDestination.Browser ->
+                    EcoBrowserContent(Modifier.fillMaxSize())
+                MainDestination.Charts ->
+                    ChartsSubNav(Modifier.fillMaxSize())
                 else ->
                     PlaceholderScreen(destination = destination)
             }

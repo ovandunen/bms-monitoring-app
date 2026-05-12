@@ -33,6 +33,14 @@ kotlin {
         }
         androidMain.dependencies {
             implementation(libs.maplibre.compose.android)
+            implementation(libs.geckoview)
+            implementation(libs.activity.compose)
+            api(libs.media3.exoplayer)
+            api(libs.media3.exoplayer.hls)
+            api(libs.media3.session)
+            api(libs.media3.ui)
+            implementation(libs.glide)
+            implementation(libs.androidx.media)
         }
         named("desktopMain") {
             dependencies {

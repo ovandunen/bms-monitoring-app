@@ -17,6 +17,9 @@ Eigenständiges Gradle-Projekt im Unterordner `eco-car-gui/` (nicht per `:eco-ca
 | Theming | `theme/EcoCarColors.kt`, `ui/theme/EcoCarTheme.kt` |
 | Navigation | `nav/MainDestination.kt` |
 | Karte (Android) | `map/EcoMapContent.android.kt` (`MaplibreMap` + MapTiler **streets-v2-dark**) |
+| Battery (Untermenü) | `ui/battery/BatterySubNav.kt` — **Übersicht / Zellen / Alarme** (Demo-Telemetrie, Sniffer → Hinweis-Dialog) |
+| Charts (Untermenü) | `ui/charts/ChartsSubNav.kt` — **Temperatur / Staubdichte / Luftfeuchtigkeit** mit Demo-Zeitreihen (Android + Desktop) |
+| Subnav-Chips (gemeinsam) | `ui/subnav/EcoSubChipsBar.kt` |
 | Einstieg Android | `androidApp/.../MainActivity.kt` |
 | Einstieg Desktop | `composeApp/.../desktopMain/.../Main.kt` |
 

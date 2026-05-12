@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.fleet.ecocar.nav.MainDestination
 import com.fleet.ecocar.theme.EcoCarColors
 
-private val ExpandedWidth = 232.dp
+private val ExpandedWidth = 260.dp
 private val CollapsedWidth = 64.dp
 
 @Composable

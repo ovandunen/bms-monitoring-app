@@ -36,6 +36,7 @@ fun AppScaffold(
     onSimulateLowBattery: () -> Unit,
     onBottomSettings: () -> Unit,
     onBottomInfo: () -> Unit,
+    onOpenSniffer: () -> Unit = {},
 ) {
     Box(modifier = modifier.fillMaxSize()) {
         Row(modifier = Modifier.fillMaxSize()) {
@@ -58,6 +59,7 @@ fun AppScaffold(
                     MainContentArea(
                         destination = selected,
                         onSimulateLowBattery = onSimulateLowBattery,
+                        onOpenSniffer = onOpenSniffer,
                     )
                 }
                 EcoBottomBar(

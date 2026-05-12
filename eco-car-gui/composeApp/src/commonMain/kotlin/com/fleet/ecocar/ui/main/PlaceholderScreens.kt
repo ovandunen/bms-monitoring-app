@@ -35,11 +35,11 @@ fun PlaceholderScreen(destination: MainDestination) {
 }
 
 private fun placeholderBlurb(d: MainDestination): String = when (d) {
-    MainDestination.Music -> "Platzhalter: Wiedergabe, Quelle (UKW/USB/Bluetooth) — v1 ohne echte Medienpipeline."
+    MainDestination.Music -> "Musik: USB/Lokal + Radio (Media3) auf Android."
     MainDestination.Map -> "Karte (Android: MapLibre Compose + MapTiler dark; Desktop: Platzhalter)."
-    MainDestination.Battery -> "Platzhalter: BMS / Ladezustand / Zellübersicht — Anbindung folgt."
-    MainDestination.Charts -> "Platzhalter: Verbrauch, Effizienz, Historie — Datenanbindung folgt."
-    MainDestination.Browser -> "Platzhalter: eingebetteter Browser / Internet — v1 ohne WebView."
+    MainDestination.Battery -> "Battery-Tab nutzt BatterySubNav (Übersicht / Zellen / Alarme, Demo-Daten); dieser Text nur bei direktem Aufruf."
+    MainDestination.Charts -> "Charts-Tab: ChartsSubNav (Temperatur, Staubdichte, Luftfeuchtigkeit — Demo); dieser Text nur bei direktem Aufruf."
+    MainDestination.Browser -> "Browser: GeckoView (Android). Desktop: nicht verfügbar."
     MainDestination.Settings -> "System- und Fahrzeugeinstellungen (Tablet, Sounds, VCU, Battery). " +
         "Nutzen Sie die Schaltfläche unten, um den Low-Battery-Dialog zu testen."
 }

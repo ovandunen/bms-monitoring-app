@@ -17,10 +17,10 @@ import androidx.compose.ui.unit.dp
 import com.fleet.ecocar.theme.EcoCarColors
 
 data class TopBarMusicState(
-    val title: String = "Mama Africa – Chico César",
-    val duration: String = "2:13",
-    val source: String = "USB 1",
-    val clock: String = "14:03",
+    val title: String = "—",
+    val duration: String = "0:00 / --:--",
+    val source: String = "",
+    val clock: String = "—",
 )
 
 @Composable
